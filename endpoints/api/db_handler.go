@@ -41,6 +41,57 @@ func InsertOneRule(ruleSet models.RuleSet) (string, error) {
 	return resultID.String(), nil
 }
 
+func InsertRulestoRuleSet(ruleSetName string, newRules []models.Rule) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	client, collectionName, err := db.ConnectDB("rule_engine")
+	if err != nil {
+		return err
+	}
+	defer client.Disconnect(ctx)
+
+	// count rules in document
+	filterDocument := bson.M{
+		"name": ruleSetName,
+		"rules": bson.M{
+			"$exists": true,
+			"$ne":     nil,
+		},
+	}
+	count, err := collectionName.CountDocuments(ctx, filterDocument)
+	if err != nil {
+		return err
+	}
+	if count == 0{ // case where no rules in specific document
+		for i := range newRules{
+			newRules[i].Id = i + 1
+		}
+	} else{ // case where rules already exists
+		for i := range newRules{
+			newRules[i].Id = int(count) + 1
+		}
+	}
+
+	// insert rules
+	filterRuleSet := bson.M{
+		"nama": ruleSetName,
+	}
+	filterUpdate := bson.M{
+		"$push": bson.M{
+			"rules": bson.M{
+				"$each": newRules,
+			},
+		},
+	}
+
+	if _, err := collectionName.UpdateOne(ctx, filterRuleSet, filterUpdate); err != nil{
+		return err
+	}
+
+	return nil
+}
+
 func FetchAllRules() ([]models.RuleSet, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()

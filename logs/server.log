@@ -11,3 +11,21 @@
 [10:23:23] [INFO] /insertRule POST (127.0.0.1) 422 826.9µs - json: cannot unmarshal array into Go struct field Rule.rules.conditions of type map[string]interface {}
 [10:23:31] [INFO] /insertRule POST (127.0.0.1) 201 2.2136029s - new rule set inserted
 [10:29:49] [INFO] /fetchRules GET (127.0.0.1) 200 981.4294ms - listing all rule sets
+[15:29:19] [INFO] /insertRule POST (127.0.0.1) 409 1.5391473s - rule set already exists
+[15:30:04] [INFO] /insertRule POST (127.0.0.1) 400      0s - empty fields
+[15:30:28] [INFO] /insertRule POST (127.0.0.1) 400      0s - Key: 'RuleSet.Name' Error:Field validation for 'Name' failed on the 'required' tag
+[16:19:27] [INFO] /fetchRules GET (127.0.0.1) 200 1.5715011s - listing all rule sets
+[16:23:21] [INFO] /fetchRules GET (127.0.0.1) 200 1.6093361s - listing all rule sets
+[16:26:17] [INFO] /fetchRules GET (127.0.0.1) 200 3.2775788s - listing all rule sets
+[16:27:09] [INFO] /fetchRules GET (127.0.0.1) 200 4.978331s - listing all rule sets
+[16:34:01] [INFO] /fetchRules GET (127.0.0.1) 200 1.8557607s - listing all rule sets
+[16:44:03] [INFO] /fetchRules GET (127.0.0.1) 200 1.5912553s - listing all rule sets
+[17:29:46] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 404      0s - resource not found
+[17:29:54] [INFO] /insertRulestoRuleSet PATCH (127.0.0.1) 404      0s - resource not found
+[17:30:08] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 404      0s - resource not found
+[17:30:39] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - Unprocessable Entity
+[17:31:05] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 1.5866134s - (Location17124) PlanExecutor error during aggregation :: caused by :: The argument to $size must be an array, but was of type: null
+[17:37:15] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 201 1.6691479s - 
+[17:38:34] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 201 1.9310507s - 
+[17:41:34] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 201 1.9070643s - 
+[17:44:57] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 201 1.5320095s - 

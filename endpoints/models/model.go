@@ -31,9 +31,9 @@ type Description struct {
 type RuleSet struct {
 	Name        string                `bson:"name" json:"name" validate:"required"`
 	Endpoint    string                `bson:"endpoint" json:"endpoint" validate:"required"`
-	Bodies      []Body                `bson:"bodies" json:"bodies"`
-	Conditions  []ConditionDictionary `bson:"conditions" json:"conditions"`
-	Action      `bson:"action" json:"action"`
+	Bodies      []Body                `bson:"bodies" json:"bodies" validate:"required"`
+	Conditions  []ConditionDictionary `bson:"conditions" json:"conditions" validate:"required"`
+	Action      `bson:"action" json:"action" validate:"required"`
 	Rules       []Rule `bson:"rules" json:"rules"`
 	Description `bson:"description" json:"description"`
 }

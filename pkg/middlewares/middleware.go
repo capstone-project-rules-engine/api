@@ -21,7 +21,9 @@ func ErrorMiddleware() fiber.Handler {
 func UndefinedRoutesMiddleware() fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		allowedPath := []string{
-			"/insertRule",
+			"/insertRuleTemplate",
+			"/insertRuletoRuleSet",
+			"/updateRuleSet",
 			"/fetchRules",
 			"/findOneRule",
 			"/execInput",
@@ -29,6 +31,9 @@ func UndefinedRoutesMiddleware() fiber.Handler {
 
 		matchedPath := false
 		for _, testPath := range allowedPath {
+			if c.Path() == "/" {
+				return c.Status(fiber.StatusOK).JSON(fiber.Map{"message": "application running smoothly"})
+			}
 			if c.Path() == testPath {
 				matchedPath = true
 				break

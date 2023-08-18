@@ -2,7 +2,7 @@ package main
 
 import (
 	"brms/config"
-	"brms/endpoints/management"
+	api "brms/endpoints/api"
 	"io"
 	"os"
 
@@ -59,7 +59,7 @@ func setApp(file *os.File) *fiber.App { // setting up middlewares
 
 func main() {
 	file, err := file.OpenLogFile()
-	if err != nil{
+	if err != nil {
 		fmt.Fprintln(os.Stderr, err.Error())
 		os.Exit(1)
 	}
@@ -68,7 +68,7 @@ func main() {
 	app := setApp(file)
 
 	// register rule management routes
-	management.Routes(app)
+	api.Routes(app)
 
 	if err := app.Listen(fmt.Sprintf(":%s", config.GetConfig().Port)); err != nil {
 		log.New(file, "ERROR: ", log.Ldate|log.Ltime).Println("Application failed to start running: ", err)
