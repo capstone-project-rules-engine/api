@@ -1,0 +1,13 @@
+[10:04:21] [INFO] / POST (127.0.0.1) 404      0s - resource not found
+[10:05:10] [INFO] /insertRuleset POST (127.0.0.1) 404      0s - resource not found
+[10:05:23] [INFO] /insertRule POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[10:07:08] [INFO] /insertRule POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[10:07:17] [INFO] /insertRule POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[10:09:56] [INFO] /insertRule POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[10:18:18] [INFO] /insertRule POST (127.0.0.1) 422 1.0012ms - json: cannot unmarshal array into Go struct field Rule.rules.conditions of type map[string]interface {}
+[10:21:49] [INFO] /insertRule POST (127.0.0.1) 422 1.0079ms - json: cannot unmarshal array into Go struct field Rule.rules.conditions of type map[string]interface {}
+[10:22:11] [INFO] /insertRule POST (127.0.0.1) 422      0s - json: cannot unmarshal array into Go struct field Rule.rules.conditions of type map[string]interface {}
+[10:22:43] [INFO] /insertRule POST (127.0.0.1) 422      0s - json: cannot unmarshal array into Go struct field Rule.rules.conditions of type map[string]interface {}
+[10:23:23] [INFO] /insertRule POST (127.0.0.1) 422 826.9µs - json: cannot unmarshal array into Go struct field Rule.rules.conditions of type map[string]interface {}
+[10:23:31] [INFO] /insertRule POST (127.0.0.1) 201 2.2136029s - new rule set inserted
+[10:29:49] [INFO] /fetchRules GET (127.0.0.1) 200 981.4294ms - listing all rule sets

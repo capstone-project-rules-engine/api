@@ -1,0 +1,57 @@
+{
+    "name": "RuleSet 1",
+    "endpoint": "ruleset1",
+    "bodies": [
+        {
+            "name": "harga",
+            "type": "number"
+        },
+        {
+            "name": "jualan",
+            "type": "number"
+        }
+    ],
+    "conditions": [
+        {
+            "label": "$hargalebih",
+            "attribute": "harga",
+            "operator": ">"
+        },
+        {
+            "label": "$jualanlebih",
+            "attribute": "jualan",
+            "operator": ">"
+        }
+    ],
+    "action": {
+        "label": "$diskon",
+        "attribute": "diskon",
+        "type": "number"
+    },
+    "rules": [
+        {
+            "id": 1,
+            "conditions": {
+                "$hargalebih": 10,
+                "$jualanlebih": 5
+            },  
+            "action": 30
+        },
+        {
+            "id": 2,
+            "conditions": {
+                "$hargalebih": 10
+            },
+            "action": 20
+        },
+        {
+            "id": 3,
+            "conditions": {},
+            "action": 5
+        }
+    ],
+    "description": {
+        "condition":"this is condition description",
+        "action": "this is action description"
+    }
+}
