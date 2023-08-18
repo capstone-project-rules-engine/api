@@ -116,3 +116,24 @@ func FetchAllRules() ([]models.RuleSet, error) {
 
 	return results, nil
 }
+
+func UpdateRuleSet(ruleSetName string, updatedRuleSet models.RuleSet) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	client, collectionName, err := db.ConnectDB("rule_engine") // Update this with your actual connection logic
+	if err != nil {
+		return err
+	}
+	defer client.Disconnect(ctx)
+
+	filter := bson.M{"name": ruleSetName}
+	update := bson.M{"$set": updatedRuleSet} // Update all fields using the entire updated rule set
+
+	_, err = collectionName.UpdateOne(ctx, filter, update)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
