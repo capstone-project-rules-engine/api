@@ -11,8 +11,8 @@ import (
 func Routes(app *fiber.App) {
 	app.Post("/insertRuleTemplate", insertRuleTemplate)
 	app.Patch("/insertRuletoRuleSet", insertRulestoRuleSet)
-	app.Put("/updateRuleSet") // tambahin 2 routes ini lagi
-	app.Post("/execInput")
+	app.Put("/updateRuleSet", updateRuleSet) // tambahin 2 routes ini lagi
+	// app.Post("/execInput")
 	app.Get("/fetchRules", ListAllRuleSet)
 }
 
@@ -99,5 +99,39 @@ func ListAllRuleSet(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"message": "listing all rule sets",
 		"details": list,
+	})
+}
+
+func updateRuleSet(c *fiber.Ctx) error {
+	// Check if method is not PUT
+	if c.Method() != fiber.MethodPut {
+		return fiber.NewError(fiber.StatusMethodNotAllowed, "invalid http method")
+	}
+
+	// Get rule set name from query parameter
+	ruleSetName := c.Query("ruleSetName")
+	if ruleSetName == "" {
+		return fiber.NewError(fiber.StatusBadRequest, "query parameter 'ruleSetName' is required")
+	}
+
+	// Parse rule set data from request body
+	var updatedRuleSet models.RuleSet
+	if err := c.BodyParser(&updatedRuleSet); err != nil {
+		return fiber.NewError(fiber.StatusUnprocessableEntity, "The request entity contains invalid or missing data")
+	}
+
+	// Validate the updated rule set
+	validator := validator.New()
+	if err := validator.Struct(updatedRuleSet); err != nil {
+		return fiber.NewError(fiber.StatusBadRequest, "invalid fields in updated rule set")
+	}
+
+	// Update the rule set in the database
+	if err := UpdateRuleSet(ruleSetName, updatedRuleSet); err != nil {
+		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
+	}
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"message": fmt.Sprintf("Rule set '%s' has been updated", ruleSetName),
 	})
 }
