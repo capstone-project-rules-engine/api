@@ -9,6 +9,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 func InsertOneRule(ruleSet models.RuleSet) (string, error) {
@@ -63,29 +64,40 @@ func InsertRulestoRuleSet(ruleSetName string, newRules []models.Rule) error {
 	if err != nil {
 		return err
 	}
-	if count == 0{ // case where no rules in specific document
-		for i := range newRules{
+
+	var filterUpdate bson.M
+
+	if count == 0 { // case where no rules in specific document
+		for i := range newRules {
 			newRules[i].Id = i + 1
 		}
-	} else{ // case where rules already exists
-		for i := range newRules{
+		// set filter when it's null
+		filterUpdate = bson.M{
+			"$set": bson.M{
+				"rules": newRules,
+			},
+		}
+	} else { // case where rules already exists
+		for i := range newRules {
 			newRules[i].Id = int(count) + 1
+		}
+		// insert when rules already exists
+		filterUpdate = bson.M{
+			"$push": bson.M{
+				"rules": bson.M{
+					"$each": newRules,
+				},
+			},
 		}
 	}
 
 	// insert rules
 	filterRuleSet := bson.M{
-		"nama": ruleSetName,
-	}
-	filterUpdate := bson.M{
-		"$push": bson.M{
-			"rules": bson.M{
-				"$each": newRules,
-			},
-		},
+		"name": ruleSetName,
 	}
 
-	if _, err := collectionName.UpdateOne(ctx, filterRuleSet, filterUpdate); err != nil{
+	
+	if _, err := collectionName.UpdateOne(ctx, filterRuleSet, filterUpdate); err != nil {
 		return err
 	}
 
@@ -115,4 +127,82 @@ func FetchAllRules() ([]models.RuleSet, error) {
 	}
 
 	return results, nil
+}
+
+func findRuleSetByName(ruleSetName string) (*models.RuleSet, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	client, collectionName, err := db.ConnectDB("rule_engine")
+	if err != nil {
+		return nil, err
+	}
+	defer client.Disconnect(ctx)
+
+	var ruleSet models.RuleSet
+
+	filter := bson.M{"name": ruleSetName}
+
+	err = collectionName.FindOne(ctx, filter).Decode(&ruleSet)
+	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return nil, fmt.Errorf("rule does not exists")
+		}
+		return nil, err
+	}
+
+	return &ruleSet, nil
+}
+
+func UpdateRuleSet(ruleSetName string, updatedRuleSet models.RuleSet) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	client, collectionName, err := db.ConnectDB("rule_engine")
+	if err != nil {
+		return err
+	}
+	defer client.Disconnect(ctx)
+
+	filter := bson.M{
+		"name": ruleSetName,
+	}
+	update := bson.M{
+		"$set": updatedRuleSet,
+	}
+
+	result, err := collectionName.UpdateOne(ctx, filter, update)
+	if err != nil {
+		return err
+	}
+	if result.MatchedCount == 0 {
+		return fmt.Errorf("no data found")
+	}
+
+	return nil
+}
+
+func deleteRuleSet(ruleSetName string) error{
+	ctx, cancel := context. WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	client, collectionName, err := db.ConnectDB("rule_engine")
+	if err != nil{
+		return err
+	}
+	defer client.Disconnect(ctx)
+
+	filter := bson.M{
+		"name": ruleSetName,
+	}
+
+	result, err := collectionName.DeleteOne(ctx, filter)
+	if err != nil{
+		return err
+	}
+	if result.DeletedCount == 0{
+		return fmt.Errorf("no data exists to be deleted")
+	}
+
+	return nil
 }

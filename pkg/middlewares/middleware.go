@@ -24,9 +24,9 @@ func UndefinedRoutesMiddleware() fiber.Handler {
 			"/insertRuleTemplate",
 			"/insertRuletoRuleSet",
 			"/updateRuleSet",
-			"/fetchRules",
-			"/findOneRule",
 			"/execInput",
+			"/fetchRules",
+			"/deleteRuleSet",
 		}
 
 		matchedPath := false
