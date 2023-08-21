@@ -1,6 +1,7 @@
 package management
 
 import (
+	"brms/endpoints/logic"
 	"brms/endpoints/models"
 	"fmt"
 
@@ -11,8 +12,8 @@ import (
 func Routes(app *fiber.App) {
 	app.Post("/insertRuleTemplate", insertRuleTemplate)
 	app.Patch("/insertRuletoRuleSet", insertRulestoRuleSet)
-	app.Put("/updateRuleSet") // tambahin 2 routes ini lagi
-	app.Post("/execInput")
+	app.Put("/updateRuleSet", updateRuleSet)
+	app.Post("/execInput", execInput)
 	app.Get("/fetchRules", ListAllRuleSet)
 }
 
@@ -37,7 +38,7 @@ func insertRuleTemplate(c *fiber.Ctx) error {
 	// insert ruleSet
 	mongoID, err := InsertOneRule(ruleSet)
 	if err != nil {
-		if err.Error() == "rule set already exists" { // conflict check 
+		if err.Error() == "rule set already exists" { // conflict check
 			return fiber.NewError(fiber.StatusConflict, err.Error())
 		}
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
@@ -51,13 +52,13 @@ func insertRuleTemplate(c *fiber.Ctx) error {
 
 func insertRulestoRuleSet(c *fiber.Ctx) error {
 	// check method
-	if c.Method() != fiber.MethodPatch{
+	if c.Method() != fiber.MethodPatch {
 		return fiber.NewError(fiber.StatusMethodNotAllowed, "invalid http method")
 	}
 
 	// get query params
 	ruleSetName := c.Query("ruleSetName")
-	if ruleSetName == ""{
+	if ruleSetName == "" {
 		return fiber.NewError(fiber.StatusBadRequest, "query parameter required")
 	}
 
@@ -74,6 +75,78 @@ func insertRulestoRuleSet(c *fiber.Ctx) error {
 
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"message": fmt.Sprintf("%d new rules has been inserted to %s", len(newRules), ruleSetName),
+	})
+}
+
+func updateRuleSet(c *fiber.Ctx) error {
+	// Check if method is not PUT
+	if c.Method() != fiber.MethodPut {
+		return fiber.NewError(fiber.StatusMethodNotAllowed, "invalid http method")
+	}
+
+	// Get rule set name from query parameter
+	ruleSetName := c.Query("ruleSetName")
+	if ruleSetName == "" {
+		return fiber.NewError(fiber.StatusBadRequest, "query parameter 'ruleSetName' is required")
+	}
+
+	// Parse rule set data from request body
+	var updatedRuleSet models.RuleSet
+	if err := c.BodyParser(&updatedRuleSet); err != nil {
+		return fiber.NewError(fiber.StatusUnprocessableEntity, "The request entity contains invalid or missing data")
+	}
+
+	// Validate the updated rule set
+	validator := validator.New()
+	if err := validator.Struct(updatedRuleSet); err != nil {
+		return fiber.NewError(fiber.StatusBadRequest, "invalid fields in updated rule set")
+	}
+
+	// Update the rule set in the database
+	if err := UpdateRuleSet(ruleSetName, updatedRuleSet); err != nil {
+		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
+	}
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"message": fmt.Sprintf("Rule set '%s' has been updated", ruleSetName),
+	})
+}
+
+func execInput(c *fiber.Ctx) error {
+	// Check if method is not POST
+	if c.Method() != fiber.MethodPost {
+		return fiber.NewError(fiber.StatusMethodNotAllowed, "invalid http method")
+	}
+
+	// Parse input data from the request body
+	var inputData map[string]interface{} // Assuming input data is a JSON object
+	if err := c.BodyParser(&inputData); err != nil {
+		return fiber.NewError(fiber.StatusUnprocessableEntity, "The request entity contains invalid or missing data")
+	}
+
+	// Get the name of the rule set from the request (you can change the query parameter as needed)
+	ruleSetName := c.Query("ruleSetName")
+	if ruleSetName == "" {
+		return fiber.NewError(fiber.StatusBadRequest, "query parameter 'ruleSetName' is required")
+	}
+
+	// Find the rule set by name from the database
+	ruleSet, err := FindRuleSetByName(ruleSetName)
+	if err != nil {
+		return fiber.NewError(fiber.StatusNotFound, "rule set not found")
+	}
+
+	// Rule processing logic here
+	// Execute rule logic
+	result, err := logic.Exec(ruleSetName, ruleSet, inputData)
+	if err != nil {
+		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
+	}
+
+	// Return the result
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"message": "Input processed successfully",
+		"result":  result,
 	})
 }
 

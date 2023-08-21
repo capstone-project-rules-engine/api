@@ -63,12 +63,12 @@ func InsertRulestoRuleSet(ruleSetName string, newRules []models.Rule) error {
 	if err != nil {
 		return err
 	}
-	if count == 0{ // case where no rules in specific document
-		for i := range newRules{
+	if count == 0 { // case where no rules in specific document
+		for i := range newRules {
 			newRules[i].Id = i + 1
 		}
-	} else{ // case where rules already exists
-		for i := range newRules{
+	} else { // case where rules already exists
+		for i := range newRules {
 			newRules[i].Id = int(count) + 1
 		}
 	}
@@ -85,7 +85,28 @@ func InsertRulestoRuleSet(ruleSetName string, newRules []models.Rule) error {
 		},
 	}
 
-	if _, err := collectionName.UpdateOne(ctx, filterRuleSet, filterUpdate); err != nil{
+	if _, err := collectionName.UpdateOne(ctx, filterRuleSet, filterUpdate); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func UpdateRuleSet(ruleSetName string, updatedRuleSet models.RuleSet) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	client, collectionName, err := db.ConnectDB("rule_engine") // Update this with your actual connection logic
+	if err != nil {
+		return err
+	}
+	defer client.Disconnect(ctx)
+
+	filter := bson.M{"name": ruleSetName}
+	update := bson.M{"$set": updatedRuleSet} // Update all fields using the entire updated rule set
+
+	_, err = collectionName.UpdateOne(ctx, filter, update)
+	if err != nil {
 		return err
 	}
 
@@ -115,4 +136,25 @@ func FetchAllRules() ([]models.RuleSet, error) {
 	}
 
 	return results, nil
+}
+
+func FindRuleSetByName(ruleSetName string) (models.RuleSet, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	client, collectionName, err := db.ConnectDB("rule_engine")
+	if err != nil {
+		return models.RuleSet{}, err
+	}
+	defer client.Disconnect(ctx)
+
+	var ruleSet models.RuleSet
+
+	filter := bson.M{"name": ruleSetName}
+	err = collectionName.FindOne(ctx, filter).Decode(&ruleSet)
+	if err != nil {
+		return models.RuleSet{}, err
+	}
+
+	return ruleSet, nil
 }
