@@ -158,3 +158,22 @@ func FindRuleSetByName(ruleSetName string) (models.RuleSet, error) {
 
 	return ruleSet, nil
 }
+func DeleteRuleSet(ruleSetName string) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	client, collectionName, err := db.ConnectDB("rule_engine")
+	if err != nil {
+		return err
+	}
+	defer client.Disconnect(ctx)
+
+	filter := bson.M{"name": ruleSetName}
+
+	_, err = collectionName.DeleteOne(ctx, filter)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}

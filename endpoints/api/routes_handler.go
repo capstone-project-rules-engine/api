@@ -15,6 +15,7 @@ func Routes(app *fiber.App) {
 	app.Put("/updateRuleSet", updateRuleSet)
 	app.Post("/execInput", execInput)
 	app.Get("/fetchRules", ListAllRuleSet)
+	app.Delete("/deleteRuleSet", deleteRuleSet) // New route for deleting a rule set
 }
 
 func insertRuleTemplate(c *fiber.Ctx) error {
@@ -172,5 +173,26 @@ func ListAllRuleSet(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"message": "listing all rule sets",
 		"details": list,
+	})
+}
+func deleteRuleSet(c *fiber.Ctx) error {
+	// Check if method is DELETE
+	if c.Method() != fiber.MethodDelete {
+		return fiber.NewError(fiber.StatusMethodNotAllowed, "invalid http method")
+	}
+
+	// Get rule set name from query parameter
+	ruleSetName := c.Query("ruleSetName")
+	if ruleSetName == "" {
+		return fiber.NewError(fiber.StatusBadRequest, "query parameter 'ruleSetName' is required")
+	}
+
+	// Delete the rule set from the database
+	if err := DeleteRuleSet(ruleSetName); err != nil {
+		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
+	}
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"message": fmt.Sprintf("Rule set '%s' has been deleted", ruleSetName),
 	})
 }

@@ -67,3 +67,12 @@
 [13:38:58] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
 [13:56:23] [INFO] /execInput POST (127.0.0.1) 400      0s - query parameter 'ruleSetName' is required
 [13:58:49] [INFO] /execInput POST (127.0.0.1) 404 1.3418935s - rule set not found
+[15:10:31] [INFO] /deleteRuleSet GET (127.0.0.1) 404 1.0133ms - resource not found
+[15:11:51] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
+[15:12:34] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
+[15:12:36] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
+[15:12:38] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
+[15:12:42] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
+[15:12:53] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
+[15:13:50] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
+[15:14:17] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
