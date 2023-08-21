@@ -58,3 +58,10 @@
 [2023-08-21 17:30:18] [INFO] /insertRuleTemplate POST (127.0.0.1) 201 976.1761ms - new rule set inserted
 [2023-08-21 17:30:23] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.0201433s - 3 new rules has been inserted to RuleSet 1
 [2023-08-21 17:30:28] [INFO] /execInput POST (127.0.0.1) 200 1.0260842s - execute 'RuleSet 1' rule set
+[2023-08-21 17:52:46] [INFO] /fetchRules GET (127.0.0.1) 200 1.6342734s - 
+[2023-08-21 17:53:24] [INFO] /fetchRules GET (127.0.0.1) 200 1.0008228s - 
+[2023-08-21 17:54:39] [INFO] /fetchRules GET (127.0.0.1) 200 1.2506258s - 
+[2023-08-21 17:55:18] [INFO] /fetchRules GET (127.0.0.1) 200 1.4907101s - 
+[2023-08-21 17:55:25] [INFO] /fetchRules GET (127.0.0.1) 200 917.3453ms - 
+[2023-08-21 17:55:42] [INFO] /fetchRules GET (127.0.0.1) 200 1.1631231s - 
+[2023-08-21 17:56:36] [INFO] /fetchRules GET (127.0.0.1) 200 1.0176835s - 

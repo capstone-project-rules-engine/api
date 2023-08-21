@@ -87,7 +87,7 @@ func insertRuleTemplate(c *fiber.Ctx) error {
 	c.Set("Location", fmt.Sprintf("%s/%s", c.BaseURL(), mongoID)) // set header location to satisfy 201 code
 
 	return c.Status(fiber.StatusCreated).JSON(fiber.Map{
-		"message": string("new rule set inserted"),
+		"message": "new rule set inserted",
 	})
 }
 
@@ -168,6 +168,8 @@ func ListAllRuleSet(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
+	c.Set("Cache-Control", "no-cache")
+
 	// check if no rule set from mongo
 	if len(list) == 0 {
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{
@@ -192,8 +194,6 @@ func deleteRuleSetRoute(c *fiber.Ctx) error {
 	if ruleSetName == "" {
 		return fiber.NewError(fiber.StatusBadRequest, "query parameter 'ruleSetName' is required")
 	}
-
-	c.Set("Cache-Control", "no-cache")
 
 	// Delete the rule set from the database
 	if err := deleteRuleSet(ruleSetName); err != nil {
