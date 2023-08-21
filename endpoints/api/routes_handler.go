@@ -193,6 +193,8 @@ func deleteRuleSetRoute(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusBadRequest, "query parameter 'ruleSetName' is required")
 	}
 
+	c.Set("Cache-Control", "no-cache")
+
 	// Delete the rule set from the database
 	if err := deleteRuleSet(ruleSetName); err != nil {
 		if err.Error() == "no data exists to be deleted" {
