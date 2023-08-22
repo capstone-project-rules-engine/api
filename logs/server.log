@@ -76,3 +76,75 @@
 [15:12:53] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
 [15:13:50] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
 [15:14:17] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
+[16:05:27] [INFO] /execInput GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:05:33] [INFO] /execInput GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:05:38] [INFO] /execInput GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:05:39] [INFO] /execInput GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:05:55] [INFO] /updateRuleSet GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:06:09] [INFO] /updateRuleSet GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:06:25] [INFO] /updateRuleSet GET (127.0.0.1) 405 994.7µs - Method Not Allowed
+[16:07:00] [INFO] /updateRuleSet GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:07:01] [INFO] /updateRuleSet GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:07:20] [INFO] /updateRuleSet GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:07:25] [INFO] /updateRuleSet GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:07:48] [INFO] /insertRuleTemplate GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:08:03] [INFO] /insertRuleTemplate GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:08:32] [INFO] /insertRuleTemplate GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:08:44] [INFO] /insertRuleTemplate GET (127.0.0.1) 405      0s - Method Not Allowed
+[16:09:26] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:09:32] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:10:14] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:10:19] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:10:45] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:11:18] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:11:24] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:12:02] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:12:04] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:12:14] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:12:17] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:13:11] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:13:14] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:13:15] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:15:21] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:15:22] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:18:37] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:18:51] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:18:52] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:19:06] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:19:07] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:19:08] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:19:15] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:19:16] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:19:17] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:19:39] [INFO] /execInput PATCH (127.0.0.1) 405      0s - Method Not Allowed
+[16:19:46] [INFO] /execInput PATCH (127.0.0.1) 405      0s - Method Not Allowed
+[16:19:50] [INFO] /execInput HEAD (127.0.0.1) 405      0s - Method Not Allowed
+[16:19:58] [INFO] /execInput OPTIONS (127.0.0.1) 405      0s - Method Not Allowed
+[16:20:01] [INFO] /execInput PUT (127.0.0.1) 405      0s - Method Not Allowed
+[16:44:39] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:46:14] [INFO] /execInput POST (127.0.0.1) 200 480.915ms - Input processed successfully
+[16:46:52] [INFO] /execInput POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:47:05] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:47:26] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:47:34] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:48:04] [INFO] /insertRuleTemplate POST (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[16:48:32] [INFO] /insertRuleTemplate POST (127.0.0.1) 409 425.884ms - rule set already exists
+[16:49:42] [INFO] /insertRuletoRuleSet POST (127.0.0.1) 405      0s - Method Not Allowed
+[16:50:12] [INFO] /insertRuletoRuleSet POST (127.0.0.1) 405      0s - Method Not Allowed
+[16:50:35] [INFO] /insertRuletoRuleSet POST (127.0.0.1) 405      0s - Method Not Allowed
+[16:51:36] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 441.3253ms - 1 new rules has been inserted to RuleSet 1
+[16:52:28] [INFO] /updateRuleSet PUT (127.0.0.1) 200 370.185ms - Rule set 'RuleSet 1' has been updated
+[16:53:23] [INFO] /fetchRules GET (127.0.0.1) 200 471.5589ms - listing all rule sets
+[16:53:38] [INFO] /fetchRules GET (127.0.0.1) 200 407.3792ms - listing all rule sets
+[16:54:21] [INFO] /deleteRuleSet GET (127.0.0.1) 404      0s - resource not found
+[16:54:35] [INFO] /deleteRuleSet DELETE (127.0.0.1) 404      0s - resource not found
+[17:03:48] [INFO] /deleteRuleSet DELETE (127.0.0.1) 200 433.0935ms - Rule set 'RuleSet 1' has been deleted
+[17:04:03] [INFO] /deleteRuleSet DELETE (127.0.0.1) 400      0s - query parameter 'ruleSetName' is required
+[17:04:14] [INFO] /deleteRuleSet DELETE (127.0.0.1) 200 431.5994ms - Rule set 'RuleSet 2' has been deleted
+[17:00:54] [INFO] /deleteRuleSet DELETE (127.0.0.1) 200 686.4375ms - Rule set 'RuleSet 2' has been deleted
+[17:01:33] [INFO] /updateRuleSet PUT (127.0.0.1) 400      0s - query parameter 'ruleSetName' is required
+[17:01:56] [INFO] /updateRuleSet PUT (127.0.0.1) 400 996.2µs - invalid fields in updated rule set
+[17:02:09] [INFO] /updateRuleSet PUT (127.0.0.1) 400      0s - invalid fields in updated rule set
+[17:02:47] [INFO] /updateRuleSet PUT (127.0.0.1) 400      0s - invalid fields in updated rule set
+[17:02:57] [INFO] /updateRuleSet PUT (127.0.0.1) 400      0s - invalid fields in updated rule set
+[17:04:01] [INFO] /updateRuleSet PUT (127.0.0.1) 200 384.0121ms - Rule set 'Ruleset 1 ' has been updated
