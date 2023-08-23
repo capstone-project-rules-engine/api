@@ -1,24 +1,24 @@
 package main
 
 import (
-        "brms/config"
-        api "brms/endpoints/management"
-        "io"
-        "os"
-        "path/filepath"
-        "time"
+	"brms/config"
+	api "brms/endpoints/management"
+	"io"
+	"os"
+	"path/filepath"
+	"time"
 
-        "brms/pkg/middlewares"
-        "encoding/json"
-        "fmt"
-        "log"
+	"brms/pkg/middlewares"
+	"encoding/json"
+	"fmt"
+	"log"
 
-        "github.com/gofiber/fiber/v2"
-        "github.com/gofiber/fiber/v2/middleware/cache"
-        "github.com/gofiber/fiber/v2/middleware/compress"
-        "github.com/gofiber/fiber/v2/middleware/cors"
-        "github.com/gofiber/fiber/v2/middleware/logger"
-        FRecover "github.com/gofiber/fiber/v2/middleware/recover"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cache"
+	"github.com/gofiber/fiber/v2/middleware/compress"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/logger"
+	FRecover "github.com/gofiber/fiber/v2/middleware/recover"
 )
 
 func setApp(file *os.File) *fiber.App { // setting up middlewares

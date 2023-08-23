@@ -57,49 +57,34 @@ func InsertRulestoRuleSet(ruleSetName string, newRules []models.Rule) error {
 		"endpoint": ruleSetName,
 	}
 
-	exist, err := collectionName.CountDocuments(ctx, filterRuleSet)
-	if err != nil{
-		return err
-	}
-	// check if rule set exists
-	if exist == 0{
-		return fmt.Errorf("rule set does not exists")
-	}
+	var ruleSet models.RuleSet
 
-	// count rules in document
-	filterDocument := bson.M{
-		"endpoint": ruleSetName,
-		"rules": bson.M{
-			"$exists": true,
-			"$ne":     nil,
-		},
-	}
-	count, err := collectionName.CountDocuments(ctx, filterDocument)
-	if err != nil {
+	if err := collectionName.FindOne(ctx, filterRuleSet).Decode(&ruleSet); err != nil {
+		if err == mongo.ErrNoDocuments {
+			return fmt.Errorf("rule set does not exists")
+		}
 		return err
 	}
 
-	var filterUpdate bson.M
+	// extract labels
+	conditionLabels := make(map[string]struct{})
+	for _, condition := range ruleSet.Conditions {
+		conditionLabels[condition.Label] = struct{}{}
+	}
 
-	if count == 0 { // case where no rules in specific document
-		// set filter when it's null
-		filterUpdate = bson.M{
-			"$set": bson.M{
-				"rules": newRules,
-			},
-		}
-	} else { // case where rules already exists
-		// insert when rules already exists
-		filterUpdate = bson.M{
-			"$push": bson.M{
-				"rules": bson.M{
-					"$each": newRules,
-				},
-			},
+	// Check newRules against conditionLabels
+	for idx, newRule := range newRules {
+		for key := range newRule.Conditions {
+			if _, exists := conditionLabels[key]; !exists {
+				return fmt.Errorf("rules condition '%s' does not exist in ruleSet '%s' at index %d", key, ruleSetName, idx+1)
+			}
 		}
 	}
-	
-	if _, err := collectionName.UpdateOne(ctx, filterRuleSet, filterUpdate); err != nil {
+
+	// insert newRule to ruleSet
+	ruleSet.Rules = append(ruleSet.Rules, newRules...)
+
+	if _, err := collectionName.UpdateOne(ctx, filterRuleSet, bson.M{"$set": ruleSet}); err != nil {
 		return err
 	}
 
@@ -166,6 +151,22 @@ func UpdateRuleSet(ruleSetName string, updatedRuleSet models.RuleSet) error {
 	}
 	defer client.Disconnect(ctx)
 
+	// validate conditions dict label and rules condition keys must be the same
+	conditionLabels := make(map[string]string)
+	for _, condition := range updatedRuleSet.Conditions {
+		conditionLabels[condition.Label] = ""
+	}
+
+	fmt.Println(conditionLabels)
+
+	for _, rule := range updatedRuleSet.Rules {
+		for key := range rule.Conditions {
+			if _, exists := conditionLabels[key]; !exists {
+				return fmt.Errorf("rules condition '%s' does not match to condition label", key)
+			}
+		}
+	}
+
 	filter := bson.M{
 		"endpoint": ruleSetName,
 	}
@@ -184,12 +185,12 @@ func UpdateRuleSet(ruleSetName string, updatedRuleSet models.RuleSet) error {
 	return nil
 }
 
-func deleteRuleSet(ruleSetName string) error{
-	ctx, cancel := context. WithTimeout(context.Background(), 10*time.Second)
+func deleteRuleSet(ruleSetName string) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
 	client, collectionName, err := db.ConnectDB("rule_engine")
-	if err != nil{
+	if err != nil {
 		return err
 	}
 	defer client.Disconnect(ctx)
@@ -199,10 +200,10 @@ func deleteRuleSet(ruleSetName string) error{
 	}
 
 	result, err := collectionName.DeleteOne(ctx, filter)
-	if err != nil{
+	if err != nil {
 		return err
 	}
-	if result.DeletedCount == 0{
+	if result.DeletedCount == 0 {
 		return fmt.Errorf("no data exists to be deleted")
 	}
 

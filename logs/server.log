@@ -199,3 +199,49 @@
 [ERROR] 2023/08/23 01:25:38 /fetchRules GET: apa loh
 [ERROR] 2023/08/23 01:27:17 /fetchRules GET: invalid character '\x1b' looking for beginning of value
 [2023-08-23 11:58:54] [INFO] /fetchRules GET (127.0.0.1) 200 2.2773277s - 1 rule sets printed
+[2023-08-23 13:56:17] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 2.3390845s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-23 13:56:43] [INFO] /deleteRuleSet DELETE (127.0.0.1) 200 1.5494253s - rule set 'ruleset1' has been deleted
+[2023-08-23 13:56:46] [INFO] /insertRuleTemplate POST (127.0.0.1) 201 427.1505ms - new rule set inserted
+[2023-08-23 13:56:51] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.0354738s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-23 13:57:03] [INFO] /fetchRules GET (127.0.0.1) 200 1.4639336s - 1 rule sets printed
+[2023-08-23 14:06:06] [INFO] /updateRuleSet PUT (127.0.0.1) 200 2.3171985s - Rule set 'ruleset1' has been updated
+[2023-08-23 14:06:12] [INFO] /execInput POST (127.0.0.1) 200 485.9557ms - execute 'ruleset1' rule set
+[2023-08-23 14:06:51] [INFO] /execInput POST (127.0.0.1) 200 471.3831ms - execute 'ruleset1' rule set
+[2023-08-23 14:09:06] [INFO] /updateRuleSet PUT (127.0.0.1) 200 1.8063023s - Rule set 'ruleset1' has been updated
+[2023-08-23 14:09:11] [INFO] /execInput POST (127.0.0.1) 200 541.9051ms - execute 'ruleset1' rule set
+[2023-08-23 14:09:33] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 753.2783ms - 3 new rules has been inserted to 'ruleset1'
+[2023-08-23 14:09:41] [INFO] /execInput POST (127.0.0.1) 200 500.1063ms - execute 'ruleset1' rule set
+[2023-08-23 14:10:24] [INFO] /updateRuleSet PUT (127.0.0.1) 200 1.398651s - Rule set 'ruleset1' has been updated
+[2023-08-23 14:10:27] [INFO] /execInput POST (127.0.0.1) 200 469.7551ms - execute 'ruleset1' rule set
+[2023-08-23 14:44:22] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.9518482s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-23 14:44:28] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 471.1999ms - condition label '$abc' does not exist in ruleSet
+[2023-08-23 14:47:48] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.514698s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-23 14:47:55] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 1.0064717s - condition label '$abc' does not exist in ruleSet at index 1
+[2023-08-23 14:48:19] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 914.3086ms - condition label '$abc' does not exist in ruleSet at index 2
+[2023-08-23 14:48:31] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 488.6858ms - condition label '$xyz' does not exist in ruleSet at index 1
+[2023-08-23 14:49:54] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 1.1947198s - condition label '$xyz' does not exist in ruleSet at index 1
+[2023-08-23 14:52:18] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 1.4955456s - condition label '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 14:52:53] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 920.4937ms - condition label '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 14:53:32] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 849.1457ms - 3 new rules has been inserted to 'ruleset1'
+[2023-08-23 14:57:50] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 2.0655024s - condition label '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 15:00:38] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 2.2653981s - condition label '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 15:01:38] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 2.032201s - condition label '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 15:02:10] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 404 710.4293ms - rule set 'abc' does not exists
+[2023-08-23 15:02:51] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 404 1.0470247s - rule set 'abc' does not exists
+[2023-08-23 15:03:44] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 404 1.3258058s - rule set 'abc' does not exists
+[2023-08-23 15:03:53] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 408.2138ms - condition label '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 15:04:48] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.2224523s - condition label '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 15:05:17] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 992.6586ms - condition label '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 15:05:50] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 1.0963948s - condition label '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 15:21:56] [INFO] /updateRuleSet PUT (127.0.0.1) 200 839.3851ms - Rule set 'ruleset1' has been updated
+[2023-08-23 15:24:18] [INFO] /updateRuleSet PUT (127.0.0.1) 400 1.115109s - condition label '$xyz' does not match
+[2023-08-23 15:24:52] [INFO] /updateRuleSet PUT (127.0.0.1) 400 377.1826ms - condition label '$jualanlebih' does not match
+[2023-08-23 15:36:53] [INFO] /updateRuleSet PUT (127.0.0.1) 400 1.2282004s - condition label '' and rules condition '$jualanlebih' does not match
+[2023-08-23 15:38:29] [INFO] /updateRuleSet PUT (127.0.0.1) 400 2.1304302s - condition label '' and rules condition '$jualanlebih' does not match
+[2023-08-23 15:42:47] [INFO] /updateRuleSet PUT (127.0.0.1) 400 715.9496ms - condition label '' and rules condition '$jualanlebih' does not match
+[2023-08-23 15:42:55] [INFO] /updateRuleSet PUT (127.0.0.1) 400 898.7237ms - rules condition '$jualanlebih' does not match to condition label
+[2023-08-23 15:43:42] [INFO] /updateRuleSet PUT (127.0.0.1) 200 415.1569ms - Rule set 'ruleset1' has been updated
+[2023-08-23 15:45:10] [INFO] /insertRuleTemplate POST (127.0.0.1) 409 1.3542538s - rule set already exists
+[2023-08-23 15:45:13] [INFO] /execInput POST (127.0.0.1) 200 389.9916ms - execute 'ruleset1' rule set
+[2023-08-23 15:45:20] [INFO] /execInput POST (127.0.0.1) 200 406.4285ms - execute 'ruleset1' rule set
+[2023-08-23 15:45:48] [WARNING] /execInput POST (127.0.0.1) 500 621.0916ms - No parameter '15 20' found.

@@ -4,6 +4,7 @@ import (
 	"brms/endpoints/logic"
 	"brms/endpoints/models"
 	"fmt"
+	"strings"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
@@ -53,7 +54,7 @@ func execInput(c *fiber.Ctx) error {
 	}
 
 	// add action to inputData
-	inputData["action"] = result
+	inputData[ruleSet.Action.Attribute] = result
 
 	// print result
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
@@ -118,6 +119,9 @@ func insertRulestoRuleSet(c *fiber.Ctx) error {
 		if err.Error() == "rule set does not exists" {
 			return fiber.NewError(fiber.StatusNotFound, fmt.Sprintf("rule set '%s' does not exists", ruleSetName))
 		}
+		if strings.Contains(err.Error(), "condition label") {
+			return fiber.NewError(fiber.StatusBadRequest, err.Error())
+		}
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
@@ -155,6 +159,9 @@ func updateRuleSet(c *fiber.Ctx) error {
 		if err.Error() == "no data found" {
 			return fiber.NewError(fiber.StatusNotFound, fmt.Sprintf("no rule set with the give key '%s' exists", ruleSetName))
 		}
+		if strings.Contains(err.Error(), "does not match") {
+			return fiber.NewError(fiber.StatusBadRequest, err.Error())
+		}
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
@@ -191,22 +198,22 @@ func ListAllRuleSet(c *fiber.Ctx) error {
 	})
 }
 
-func findSpecificRuleSet(c *fiber.Ctx) error{
+func findSpecificRuleSet(c *fiber.Ctx) error {
 	// check method
-	if c.Method() != fiber.MethodGet{
+	if c.Method() != fiber.MethodGet {
 		return fiber.NewError(fiber.StatusMethodNotAllowed, "invalid http method")
 	}
 
 	// get name from query
 	ruleSetname := c.Query("ruleSetName")
-	if ruleSetname == ""{
+	if ruleSetname == "" {
 		return fiber.NewError(fiber.StatusBadRequest, "empty query parameter")
 	}
 
 	// fetch rule set
 	oneRuleSet, err := findRuleSetByName(ruleSetname)
-	if err != nil{
-		if err.Error() == "rule does not exists"{
+	if err != nil {
+		if err.Error() == "rule does not exists" {
 			return fiber.NewError(fiber.StatusNotFound, fmt.Sprintf("rule set '%s' does not exists", ruleSetname))
 		}
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
