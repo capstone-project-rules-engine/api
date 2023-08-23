@@ -2,12 +2,12 @@ package main
 
 import (
 	"brms/config"
-	api "brms/endpoints/api"
+	api "brms/endpoints/management"
 	"io"
 	"os"
+	"path/filepath"
 	"time"
 
-	"brms/pkg/file"
 	"brms/pkg/middlewares"
 	"encoding/json"
 	"fmt"
@@ -29,6 +29,9 @@ func setApp(file *os.File) *fiber.App { // setting up middlewares
 		EnableStackTrace: true,
 		StackTraceHandler: func(c *fiber.Ctx, e interface{}) {
 			log.New(io.MultiWriter(os.Stdout, file), "[ERROR] ", log.Ldate|log.Ltime).Printf("%s %s: %s\n", c.Path(), c.Method(), e)
+			c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"error msg": e,
+			})
 		},
 	}))
 
@@ -50,6 +53,8 @@ func setApp(file *os.File) *fiber.App { // setting up middlewares
 					if err == nil {
 						msgValue, _ := bodyData["message"].(string)
 						return output.WriteString(msgValue)
+					} else {
+						panic(err)
 					}
 				}
 				return 0, nil
@@ -73,7 +78,11 @@ func setApp(file *os.File) *fiber.App { // setting up middlewares
 	}))
 
 	// compression middleware
-	app.Use(compress.New())
+	app.Use(compress.New(compress.Config{
+		Next: func(c *fiber.Ctx) bool {
+			return c.Method() == fiber.MethodGet
+		},
+	}))
 
 	// check valid routes middleware
 	app.Use(middlewares.UndefinedRoutesMiddleware())
@@ -85,7 +94,8 @@ func setApp(file *os.File) *fiber.App { // setting up middlewares
 }
 
 func main() {
-	file, err := file.OpenLogFile()
+	logPath := filepath.Join("logs", "server.log")
+	file, err := os.OpenFile(logPath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err.Error())
 		os.Exit(1)

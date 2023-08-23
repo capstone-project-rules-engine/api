@@ -65,3 +65,137 @@
 [2023-08-21 17:55:25] [INFO] /fetchRules GET (127.0.0.1) 200 917.3453ms - 
 [2023-08-21 17:55:42] [INFO] /fetchRules GET (127.0.0.1) 200 1.1631231s - 
 [2023-08-21 17:56:36] [INFO] /fetchRules GET (127.0.0.1) 200 1.0176835s - 
+[2023-08-21 19:16:16] [INFO] /execInput POST (127.0.0.1) 200 1.9682158s - execute 'RuleSet 1' rule set
+[2023-08-21 19:16:25] [INFO] /execInput POST (127.0.0.1) 200 918.2085ms - execute 'RuleSet 1' rule set
+[2023-08-21 19:16:33] [INFO] /execInput POST (127.0.0.1) 200 952.6604ms - execute 'RuleSet 1' rule set
+[2023-08-21 19:28:41] [INFO] /deleteRuleSet DELETE (127.0.0.1) 200 1.8720511s - rule set 'RuleSet 1' has been deleted
+[2023-08-21 19:28:46] [INFO] /insertRuleTemplate POST (127.0.0.1) 201 1.3151279s - new rule set inserted
+[2023-08-21 19:28:50] [INFO] /fetchRules GET (127.0.0.1) 200 1.137015s - 
+[2023-08-21 19:28:55] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.450629s - 3 new rules has been inserted to 'RuleSet 1'
+[2023-08-21 19:29:21] [INFO] /updateRuleSet PUT (127.0.0.1) 200 1.2620046s - Rule set 'RuleSet 1' has been updated
+[2023-08-21 19:29:45] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.5983868s - 3 new rules has been inserted to 'RuleSet 1'
+[2023-08-21 19:33:48] [INFO] /deleteRuleSet DELETE (127.0.0.1) 200 1.6213771s - rule set 'RuleSet 1' has been deleted
+[2023-08-21 19:33:51] [INFO] /insertRuleTemplate POST (127.0.0.1) 201 1.197902s - new rule set inserted
+[2023-08-21 19:33:56] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.5293294s - 3 new rules has been inserted to 'RuleSet 1'
+[2023-08-21 19:34:32] [INFO] /updateRuleSet PUT (127.0.0.1) 200 1.3090836s - Rule set 'RuleSet 1' has been updated
+[2023-08-21 19:34:52] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.6326677s - 3 new rules has been inserted to 'RuleSet 1'
+[2023-08-21 19:39:51] [INFO] /updateRuleSet PUT (127.0.0.1) 200 1.6673188s - Rule set 'RuleSet 1' has been updated
+[2023-08-22 18:42:23] [INFO] /insertRuletoRuleSet GET (127.0.0.1) 405      0s - Method Not Allowed
+[2023-08-22 18:42:23] [INFO] /favicon.ico GET (127.0.0.1) 404      0s - resource not found
+[2023-08-22 18:42:34] [INFO] /insertRuletoRuleSet GET (127.0.0.1) 405      0s - Method Not Allowed
+[2023-08-22 18:45:48] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 2.0762811s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-22 18:46:10] [INFO] /fetchRules GET (127.0.0.1) 200 1.0112821s - 
+[2023-08-22 18:46:50] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.2830875s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-22 18:46:57] [INFO] /fetchRules GET (127.0.0.1) 200 939.6422ms - 
+[2023-08-22 18:47:03] [INFO] /fetchRules GET (127.0.0.1) 200 926.9813ms - 
+[2023-08-22 18:47:38] [INFO] /fetchRules GET (127.0.0.1) 200 1.0915245s - 
+[2023-08-22 18:47:58] [INFO] /updateRuleSet PUT (127.0.0.1) 200 1.2070297s - Rule set 'RuleSet 1' has been updated
+[2023-08-22 18:48:25] [INFO] /execInput POST (127.0.0.1) 404 983.5231ms - rule set 'ruleset1' not found
+[2023-08-22 18:48:35] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.0014814s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-22 18:48:39] [INFO] /fetchRules GET (127.0.0.1) 200 1.2674041s - 
+[2023-08-22 18:48:47] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.035249s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-22 18:48:50] [INFO] /fetchRules GET (127.0.0.1) 200 943.5114ms - 
+[2023-08-22 18:50:00] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.2535944s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-22 18:50:44] [INFO] /deleteRuleSet DELETE (127.0.0.1) 404 1.0702798s - no data exists to be deleted
+[2023-08-22 19:26:58] [INFO] /fetchRules GET (127.0.0.1) 200 1.2240838s - 
+[2023-08-22 19:29:00] [INFO] /FetchRules GET (127.0.0.1) 404      0s - resource not found
+[2023-08-22 19:29:05] [INFO] /fetchRules GET (127.0.0.1) 200 1.1984612s - 
+[2023-08-22 20:27:26] [INFO] /fetchRules GET (127.0.0.1) 200 1.3502856s - 
+[2023-08-22 20:29:14] [INFO] /deleteRuleSet DELETE (127.0.0.1) 200 2.0169837s - rule set 'ruleset1' has been deleted
+[2023-08-22 20:29:19] [INFO] /fetchRules GET (127.0.0.1) 200 1.1439948s - rule set list empty
+[2023-08-22 20:29:28] [INFO] /insertRuleTemplate POST (127.0.0.1) 201 1.1267836s - new rule set inserted
+[2023-08-22 20:29:33] [INFO] /fetchRules GET (127.0.0.1) 200 1.1308243s - 
+[2023-08-22 20:33:13] [INFO] /execInput POST (127.0.0.1) 200 1.6100532s - execute 'ruleset1' rule set
+[2023-08-22 20:33:29] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.1345817s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-22 20:33:33] [INFO] /execInput POST (127.0.0.1) 200 1.27461s - execute 'ruleset1' rule set
+[2023-08-22 20:33:48] [INFO] /fetchRules GET (127.0.0.1) 200 1.2613287s - 
+[2023-08-22 20:38:40] [INFO] /fetchRules GET (127.0.0.1) 200 1.9463228s - 
+[2023-08-22 20:39:01] [INFO] /execInput POST (127.0.0.1) 200 1.8342627s - execute 'ruleset1' rule set
+[2023-08-22 20:39:57] [INFO] /execInput POST (127.0.0.1) 200 1.9451186s - execute 'ruleset1' rule set
+[2023-08-22 20:40:02] [INFO] /fetchRules GET (127.0.0.1) 200 1.1350473s - 
+[2023-08-22 20:42:09] [INFO] /fetchRules GET (127.0.0.1) 200 2.0544632s - 1 rule sets printed out
+[2023-08-22 20:42:41] [INFO] /fetchRules GET (127.0.0.1) 200 2.3422836s - 
+[2023-08-22 20:46:33] [INFO] /fetchRules GET (127.0.0.1) 200 3.0775078s - 
+[2023-08-22 20:47:27] [INFO] /fetchRules GET (127.0.0.1) 200 1.8419013s - 
+[2023-08-22 20:47:39] [INFO] /fetchRules GET (127.0.0.1) 200 1.3243986s - 
+[2023-08-22 20:50:25] [INFO] /fetchRules GET (127.0.0.1) 200 2.020959s - 
+[2023-08-22 20:52:20] [INFO] /fetchRules GET (127.0.0.1) 200 1.8360617s - 
+[2023-08-22 20:53:07] [INFO] /fetchRules GET (127.0.0.1) 200 1.5983487s - 
+[2023-08-22 20:53:58] [INFO] /fetchRules GET (127.0.0.1) 200 1.7853998s - 
+[2023-08-22 20:54:50] [INFO] /execInput POST (127.0.0.1) 200 1.1186429s - execute 'ruleset1' rule set
+[2023-08-22 20:56:13] [INFO] /execInput POST (127.0.0.1) 200 2.0271196s - execute 'ruleset1' rule set
+[2023-08-22 20:56:21] [INFO] /fetchRules GET (127.0.0.1) 200 1.2562874s - 
+[ERROR] 2023/08/22 20:57:29 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/22 20:58:04 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[2023-08-22 20:58:26] [INFO] /execInput POST (127.0.0.1) 200 1.1595512s - execute 'ruleset1' rule set
+[2023-08-22 21:07:28] [INFO] /fetchRules GET (127.0.0.1) 200 1.9150554s - 1 rule sets printed out
+[2023-08-22 21:09:29] [INFO] /fetchRules GET (127.0.0.1) 200 2.365005s - 1 rule sets printed out
+[ERROR] 2023/08/22 21:10:14 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/22 21:16:54 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/22 21:18:14 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/22 21:20:19 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[2023-08-22 21:21:28] [INFO] /fetchRules GET (127.0.0.1) 200 2.3458609s - 
+[2023-08-22 21:22:16] [INFO] /fetchRules GET (127.0.0.1) 200 1.8812743s - 
+[2023-08-22 21:23:54] [INFO] /fetchRules GET (127.0.0.1) 200 2.3677168s - 
+[2023-08-22 21:24:17] [INFO] /execInput POST (127.0.0.1) 200 1.0099067s - execute 'ruleset1' rule set
+[2023-08-22 21:25:56] [INFO] /fetchRules GET (127.0.0.1) 200 1.6507209s - 
+[2023-08-22 21:28:24] [INFO] /fetchRules GET (127.0.0.1) 200 1.6531332s - 
+[2023-08-22 21:29:32] [INFO] /fetchRules GET (127.0.0.1) 200 2.0626364s - 
+[2023-08-22 21:31:56] [INFO] /fetchRules GET (127.0.0.1) 200 1.9151508s - 
+[2023-08-22 21:36:25] [INFO] /fetchRules GET (127.0.0.1) 200 1.6908877s - 
+[2023-08-22 21:40:31] [INFO] /fetchRules GET (127.0.0.1) 200 2.0623875s - 
+[2023-08-22 21:44:21] [INFO] /fetchRules GET (127.0.0.1) 200 1.8105444s - 
+[2023-08-22 21:45:42] [INFO] /fetchRules GET (127.0.0.1) 200 1.7060648s - 
+[2023-08-22 21:50:48] [INFO] /fetchRules GET (127.0.0.1) 200 1.6087252s - 
+[2023-08-22 21:55:46] [INFO] /fetchRules GET (127.0.0.1) 200 1.9845591s - 
+[2023-08-22 21:59:43] [INFO] /fetchRules GET (127.0.0.1) 200 1.6411407s - 
+[2023-08-22 22:01:47] [INFO] /fetchRules GET (127.0.0.1) 200 1.8207681s - 
+[2023-08-22 22:02:53] [INFO] /fetchRules GET (127.0.0.1) 200 1.5845186s - 
+[2023-08-22 22:14:49] [INFO] /fetchRules GET (127.0.0.1) 200 1.9454501s - 
+[2023-08-22 22:17:41] [INFO] /fetchRules GET (127.0.0.1) 200 1.8809798s - 
+[2023-08-22 22:29:45] [INFO] /execInput POST (127.0.0.1) 200 1.1974763s - execute 'ruleset1' rule set
+[2023-08-22 22:43:55] [INFO] /fetchRules GET (127.0.0.1) 200 1.7802703s - 
+[2023-08-22 22:58:34] [INFO] /fetchRules GET (127.0.0.1) 200 1.511583s - 
+[2023-08-22 23:02:15] [INFO] /fetchRules GET (127.0.0.1) 200 1.7351834s - 
+[2023-08-22 23:04:45] [INFO] /fetchRules GET (127.0.0.1) 200 1.6274125s - 
+[2023-08-22 23:05:21] [INFO] /fetchRules GET (127.0.0.1) 200 1.4526182s - 
+[2023-08-22 23:05:53] [INFO] /fetchRules GET (127.0.0.1) 200 1.5366073s - 
+[2023-08-22 23:12:49] [INFO] /fetchRules GET (127.0.0.1) 200 2.1554686s - 
+[2023-08-22 23:15:25] [INFO] /deleteRuleSet DELETE (127.0.0.1) 200 1.0238929s - rule set 'ruleset1' has been deleted
+[2023-08-22 23:16:07] [INFO] /fetchRules GET (127.0.0.1) 200 1.1704749s - 
+[2023-08-22 23:21:01] [INFO] /fetchRules GET (127.0.0.1) 200 2.0362653s - 
+[2023-08-22 23:29:19] [INFO] /fetchRules GET (127.0.0.1) 200 1.6737031s - 
+[2023-08-22 23:32:43] [INFO] /fetchRules GET (127.0.0.1) 200 1.6250895s - 
+[2023-08-22 23:33:33] [INFO] /fetchRules GET (127.0.0.1) 200 1.3904027s - 
+[2023-08-22 23:35:39] [INFO] /fetchRules GET (127.0.0.1) 200 1.1058855s - 
+[2023-08-22 23:37:32] [INFO] /fetchRules GET (127.0.0.1) 200 1.5726432s - 
+[2023-08-22 23:38:53] [INFO] /fetchRules GET (127.0.0.1) 200 3.2018466s - 
+[2023-08-22 23:47:38] [INFO] /fetchRules GET (127.0.0.1) 200 1.5722518s - 
+[2023-08-22 23:53:26] [INFO] /fetchRules GET (127.0.0.1) 200 1.5853017s - 
+[2023-08-22 23:55:30] [INFO] /fetchRules GET (127.0.0.1) 200 1.6955026s - 
+[2023-08-22 23:59:15] [INFO] /fetchRules GET (127.0.0.1) 200 1.6342406s - 
+[2023-08-23 00:12:59] [INFO] /execInput POST (127.0.0.1) 200 1.1530532s - execute 'ruleset1' rule set
+[2023-08-23 00:21:18] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 
+[2023-08-23 00:21:47] [INFO] /fetchRules GET (127.0.0.1) 200 1.1997003s - 
+[2023-08-23 00:22:18] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 
+[2023-08-23 00:22:27] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 
+[2023-08-23 00:24:31] [INFO] /fetchRules GET (127.0.0.1) 200 1.690362s - 
+[2023-08-23 00:25:17] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 
+[2023-08-23 00:25:24] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 
+[2023-08-23 00:27:26] [INFO] /fetchRules GET (127.0.0.1) 200 1.6567152s - 
+[2023-08-23 00:31:23] [INFO] /fetchRules GET (127.0.0.1) 200 1.644033s - 
+[2023-08-23 00:31:31] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 
+[2023-08-23 00:35:23] [INFO] /fetchRules GET (127.0.0.1) 200 1.568276s - 1 rule sets printed
+[2023-08-23 00:35:30] [INFO] /fetchRules GET (127.0.0.1) 200 862.0779ms - 1 rule sets printed
+[2023-08-23 00:35:34] [INFO] /fetchRules GET (127.0.0.1) 200 897.8737ms - 1 rule sets printed
+[2023-08-23 00:35:55] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 1 rule sets printed
+[2023-08-23 00:39:15] [INFO] /execInput POST (127.0.0.1) 200 1.3092256s - execute 'ruleset1' rule set
+[2023-08-23 00:42:54] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 1 rule sets printed
+[ERROR] 2023/08/23 01:08:49 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/23 01:08:58 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/23 01:22:53 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/23 01:23:00 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/23 01:24:47 /fetchRules GET: apa loh
+[ERROR] 2023/08/23 01:25:38 /fetchRules GET: apa loh
+[ERROR] 2023/08/23 01:27:17 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[2023-08-23 11:58:54] [INFO] /fetchRules GET (127.0.0.1) 200 2.2773277s - 1 rule sets printed

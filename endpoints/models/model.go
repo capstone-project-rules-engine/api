@@ -1,7 +1,6 @@
 package models
 
 type Rule struct {
-	Id         int                    `bson:"id" json:"id"`
 	Conditions map[string]interface{} `bson:"conditions" json:"conditions"`
 	Action     interface{}            `bson:"action" json:"action"`
 }

@@ -26,6 +26,7 @@ func UndefinedRoutesMiddleware() fiber.Handler {
 			"/updateRuleSet",
 			"/execInput",
 			"/fetchRules",
+			"/fetchSpecificRuleSet",
 			"/deleteRuleSet",
 		}
 
