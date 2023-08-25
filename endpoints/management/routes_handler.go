@@ -114,6 +114,19 @@ func insertRulestoRuleSet(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusUnprocessableEntity, "The request entity contains invalid or missing data")
 	}
 
+	// check unique conditions
+	checkCondition := make(map[interface{}]bool)
+	idx := 1
+	for _, rule := range newRules {
+		for keys, value := range rule.Conditions {
+			if checkCondition[value] {
+				return fiber.NewError(fiber.StatusBadRequest, fmt.Sprintf("got duplicate value on index %d with keys %s", idx, keys))
+			}
+			checkCondition[value] = true
+		}
+		idx++
+	}
+
 	// insert new rules
 	if err := InsertRulestoRuleSet(ruleSetName, newRules); err != nil {
 		if err.Error() == "rule set does not exists" {
@@ -152,6 +165,19 @@ func updateRuleSet(c *fiber.Ctx) error {
 	validator := validator.New()
 	if err := validator.Struct(updatedRuleSet); err != nil {
 		return fiber.NewError(fiber.StatusBadRequest, "invalid fields in updated rule set")
+	}
+
+	// check unique conditions
+	checkCondition := make(map[interface{}]bool)
+	idx := 1
+	for _, rule := range updatedRuleSet.Rules {
+		for keys, value := range rule.Conditions {
+			if checkCondition[value] {
+				return fiber.NewError(fiber.StatusBadRequest, fmt.Sprintf("got duplicate value on index %d with keys %s", idx, keys))
+			}
+			checkCondition[value] = true
+		}
+		idx++
 	}
 
 	// Update the rule set in the database
