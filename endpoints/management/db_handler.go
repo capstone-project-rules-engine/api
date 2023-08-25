@@ -22,8 +22,15 @@ func InsertOneRule(ruleSet models.RuleSet) (string, error) {
 	}
 	defer client.Disconnect(ctx)
 
+	uniqueFileter := bson.M{
+		"$and": []bson.M{
+			{"name": ruleSet.Name},
+			{"endpoint": ruleSet.Endpoint},
+		},
+	}
+
 	// check unique
-	countRule, err := collectionName.CountDocuments(ctx, bson.M{"name": ruleSet.Name})
+	countRule, err := collectionName.CountDocuments(ctx, uniqueFileter)
 	if err != nil {
 		return "", err
 	}
