@@ -245,3 +245,45 @@
 [2023-08-23 15:45:13] [INFO] /execInput POST (127.0.0.1) 200 389.9916ms - execute 'ruleset1' rule set
 [2023-08-23 15:45:20] [INFO] /execInput POST (127.0.0.1) 200 406.4285ms - execute 'ruleset1' rule set
 [2023-08-23 15:45:48] [WARNING] /execInput POST (127.0.0.1) 500 621.0916ms - No parameter '15 20' found.
+[2023-08-23 15:55:51] [WARNING] /execInput POST (127.0.0.1) 500 1.2256648s - No parameter '15 20' found.
+[2023-08-23 15:56:13] [INFO] /deleteRuleSet DELETE (127.0.0.1) 200 399.7556ms - rule set 'ruleset1' has been deleted
+[2023-08-23 15:56:16] [INFO] /fetchRules GET (127.0.0.1) 200 368.321ms - 11 rule sets printed
+[2023-08-23 15:56:39] [INFO] /insertRuleTemplate POST (127.0.0.1) 201 470.4874ms - new rule set inserted
+[2023-08-23 15:56:46] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 461.4592ms - rules condition '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 15:56:54] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 641.8707ms - 3 new rules has been inserted to 'ruleset1'
+[2023-08-23 19:03:21] [INFO] /fetchRules GET (127.0.0.1) 200 1.3288951s - 12 rule sets printed
+[2023-08-23 19:03:34] [INFO] /fetchRules GET (127.0.0.1) 200 321.6742ms - 12 rule sets printed
+[2023-08-23 19:05:02] [INFO] /fetchSpecificRuleSet GET (127.0.0.1) 200 735.442ms - printing rule set 'RuleSet 2'
+[2023-08-23 19:05:36] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 600.1241ms - rules condition '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-23 19:07:15] [INFO] /updateRuleSet PUT (127.0.0.1) 400 1.9733297s - rules condition '$jualanlebih' does not match to condition label
+[2023-08-23 19:08:54] [WARNING] /execInput POST (127.0.0.1) 500 612.235ms - No parameter '15 20' found.
+[2023-08-23 19:15:41] [INFO] /fetchRules GET (127.0.0.1) 200 619.9854ms - 13 rule sets printed
+[2023-08-23 19:19:06] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.2905123s - 3 new rules has been inserted to 'ruleset1'
+[2023-08-23 19:19:14] [INFO] /fetchSpecificRuleSet GET (127.0.0.1) 200 346.6095ms - printing rule set 'RuleSet 1'
+[2023-08-23 19:19:31] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 406.3025ms - 3 new rules has been inserted to 'ruleset1'
+[2023-08-23 19:19:35] [INFO] /fetchSpecificRuleSet GET (127.0.0.1) 200 447.4528ms - printing rule set 'RuleSet 1'
+[2023-08-23 19:21:34] [INFO] /execInput POST (127.0.0.1) 200 587.8009ms - execute 'ruleset1' rule set
+[2023-08-24 19:09:30] [INFO] /fetchRules GET (127.0.0.1) 200 1.7776492s - 12 rule sets printed
+[2023-08-24 19:09:47] [INFO] /fetchRules GET (127.0.0.1) 200 941.3262ms - 12 rule sets printed
+[2023-08-24 19:10:39] [INFO] /insertRuleTemplate POST (127.0.0.1) 201 1.3259101s - new rule set inserted
+[2023-08-24 19:10:50] [INFO] /fetchRules GET (127.0.0.1) 200 1.0907769s - 13 rule sets printed
+[2023-08-24 19:11:01] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 13 rule sets printed
+[2023-08-24 19:11:15] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 13 rule sets printed
+[2023-08-24 19:12:07] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 13 rule sets printed
+[2023-08-24 19:13:48] [WARNING] /execInput POST (127.0.0.1) 500 1.1988146s - No parameter 'apa' found.
+[2023-08-24 19:19:13] [WARNING] /insertRuletoRuleSet PATCH (127.0.0.1) 500 2.0948376s - rules condition '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-24 19:19:18] [INFO] /fetchRules GET (127.0.0.1) 200 901.3143ms - 13 rule sets printed
+[2023-08-24 19:19:35] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 13 rule sets printed
+[2023-08-24 19:25:54] [INFO] /fetchSpecificRuleSet GET (127.0.0.1) 200 1.2376386s - printing rule set 'rule set 123'
+[2023-08-24 19:27:49] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 2.0362792s - rules condition '$xyz' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-24 19:27:55] [INFO] /fetchRules GET (127.0.0.1) 200 1.0011835s - 13 rule sets printed
+[2023-08-24 19:28:35] [INFO] /fetchRules GET (127.0.0.1) 200 977.6006ms - 13 rule sets printed
+[2023-08-24 19:28:43] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 13 rule sets printed
+[2023-08-24 19:40:30] [INFO] /fetchRules GET (127.0.0.1) 200 4.7245897s - 13 rule sets printed
+[2023-08-24 19:41:23] [INFO] /fetchRules GET (127.0.0.1) 200 3.2798493s - 13 rule sets printed
+[2023-08-24 19:41:38] [INFO] /fetchRules GET (127.0.0.1) 200      0s - 13 rule sets printed
+[ERROR] 2023/08/24 19:41:59 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/24 19:42:12 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/24 19:42:43 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/24 19:42:58 /fetchSpecificRuleSet GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/24 19:46:19 /fetchRules GET: invalid character '\x1b' looking for beginning of value

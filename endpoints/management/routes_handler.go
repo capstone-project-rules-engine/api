@@ -119,7 +119,7 @@ func insertRulestoRuleSet(c *fiber.Ctx) error {
 		if err.Error() == "rule set does not exists" {
 			return fiber.NewError(fiber.StatusNotFound, fmt.Sprintf("rule set '%s' does not exists", ruleSetName))
 		}
-		if strings.Contains(err.Error(), "condition label") {
+		if strings.Contains(err.Error(), "rules condition") {
 			return fiber.NewError(fiber.StatusBadRequest, err.Error())
 		}
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
