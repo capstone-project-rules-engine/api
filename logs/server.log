@@ -322,3 +322,76 @@
 [2023-08-25 17:51:11] [INFO] /updateRuleSet PUT (127.0.0.1) 400 1.0001ms - got duplicate value on index 1 with keys $hargalebih
 [2023-08-25 17:51:52] [INFO] /updateRuleSet PUT (127.0.0.1) 400 3.0316ms - got duplicate value on index 2 with keys $hargalebih
 [2023-08-25 17:52:44] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 507.3µs - got duplicate value on index 2 with keys $hargalebih
+[2023-08-25 18:56:17] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 18:56:28] [INFO] /fetchRules GET (127.0.0.1) 200 1.2005963s - 2 rule sets printed
+[2023-08-25 18:57:09] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 18:57:39] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422 133.4µs - The request entity contains invalid or missing data
+[2023-08-25 18:57:44] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 18:59:43] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:04:54] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:15:52] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:17:30] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:18:08] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:18:29] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422 962.1µs - The request entity contains invalid or missing data
+[2023-08-25 19:20:48] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:21:29] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:22:14] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:22:32] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:25:16] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:25:24] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 422      0s - The request entity contains invalid or missing data
+[2023-08-25 19:31:18] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 940.2925ms - rules condition '$belanjaLebih' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-25 19:31:43] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 404 1.162624s - rule set 'Diskon' does not exists
+[2023-08-25 19:33:19] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.3670085s - 2 new rules has been inserted to 'ruleset1'
+[2023-08-25 19:33:44] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 856.7513ms - 2 new rules has been inserted to 'ruleset1'
+[2023-08-25 19:34:12] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 997.8µs - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 19:36:33] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 19:38:53] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 999.3µs - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 19:58:36] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.3539289s - 2 new rules has been inserted to 'ruleset1'
+[2023-08-25 19:59:21] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:00:02] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:00:19] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:00:27] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:02:25] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:02:31] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:04:46] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.0017ms - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:05:23] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:05:40] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:06:23] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:07:17] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 574.3µs - got duplicate value on index 2 with keys $hargalebih
+[2023-08-25 20:08:26] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 536.1µs - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:17:32] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:17:46] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Invalid value for condition key '$hargalebih' at index 1
+[2023-08-25 20:19:04] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - got duplicate value on index 2 with keys $hargalebih
+[2023-08-25 20:23:05] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Duplicate key-value pair detected on index 2: $hargalebih|%!s(float64=20)
+[2023-08-25 20:25:33] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400   605µs - Duplicate key-value pair detected on index 2 with $hargalebih|%!s(float64=20)
+[2023-08-25 20:25:41] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Duplicate key-value pair detected on index 2 with $hargalebih|%!s(float64=20)
+[2023-08-25 20:35:16] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 537.8µs - Duplicate key-value pair detected index 2: key='$hargalebih', value='%!s(float64=20)'
+[2023-08-25 20:36:11] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 560.9µs - Duplicate key-value pair detected index 2: key='$hargalebih', value='%!d(float64=20)'
+[2023-08-25 20:40:44] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.0021ms - Duplicate key-value pair detected on index 2: key='$hargalebih', value=20
+[2023-08-25 20:42:44] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.5673654s - rules condition '$hargajual' does not exist in ruleSet 'ruleset1' at index 2
+[2023-08-25 20:43:06] [INFO] /fetchRules GET (127.0.0.1) 200 798.6074ms - 2 rule sets printed
+[2023-08-25 20:43:21] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 755.7722ms - 2 new rules has been inserted to 'ruleset1'
+[2023-08-25 20:43:49] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.3008704s - 2 new rules has been inserted to 'ruleset1'
+[2023-08-25 20:55:53] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 940.8043ms - 2 new rules has been inserted to 'ruleset1'
+[2023-08-25 20:56:34] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.3025326s - 2 new rules has been inserted to 'ruleset1'
+[2023-08-25 21:20:18] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.0770129s - rules condition 'hargalebih' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-25 21:20:54] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Duplicate key-value pair detected on index 2: key='hargalebih', value=10
+[2023-08-25 21:21:11] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.0718848s - rules condition 'hargalebih' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-25 21:21:26] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.1311862s - rules condition 'jumlahbarang' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-25 21:25:55] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Duplicate key-value pair detected on index 2: key='$hargalebih', value=20
+[2023-08-25 21:26:31] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.3969721s - 2 new rules has been inserted to 'ruleset1'
+[2023-08-25 21:28:58] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 875.913ms - rules condition 'jumlahbarang' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-25 21:30:02] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.2628134s - rules condition 'jualanlebih' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-25 21:30:48] [INFO] /fetchRules GET (127.0.0.1) 200 844.1135ms - 2 rule sets printed
+[2023-08-25 21:31:05] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.2740708s - rules condition 'jualanlebih' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-25 21:32:57] [INFO] /insertRuleTemplate POST (127.0.0.1) 409 1.4345329s - rule set already exists
+[2023-08-25 21:34:15] [INFO] /insertRuleTemplate POST (127.0.0.1) 201 1.696298s - new rule set inserted
+[2023-08-25 21:34:21] [INFO] /fetchRules GET (127.0.0.1) 200 572.5655ms - 3 rule sets printed
+[2023-08-25 21:34:44] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 725.734ms - rules condition 'jumlahbaranglebih' does not exist in ruleSet 'ruleset1' at index 1
+[2023-08-25 21:34:55] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.0429831s - rules condition 'jumlahbaranglebih' does not exist in ruleSet 'ruleset2' at index 1
+[2023-08-25 21:35:16] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400 1.5002651s - rules condition 'jumlahbaranglebih' does not exist in ruleSet 'ruleset2' at index 1
+[2023-08-25 21:35:56] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Duplicate key-value pair detected on index 2: key='$hargalebih', value=10
+[2023-08-25 21:44:06] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.3413251s - 2 new rules has been inserted to 'ruleset2'
+[2023-08-25 21:47:01] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Duplicate key-value pairs detected on index 2: $hargalebih:10|$jumlahbaranglebih:5
+[2023-08-25 21:49:46] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400   595µs - Duplicate key-value pairs detected on index 2: $hargalebih: 10 | $jumlahbaranglebih: 5
+[2023-08-25 21:51:22] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.6487338s - 2 new rules has been inserted to 'ruleset2'

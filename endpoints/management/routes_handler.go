@@ -118,12 +118,18 @@ func insertRulestoRuleSet(c *fiber.Ctx) error {
 	checkCondition := make(map[interface{}]bool)
 	idx := 1
 	for _, rule := range newRules {
+		// Create a unique identifier based on all keys and their values
+		var identifiers []string
 		for keys, value := range rule.Conditions {
-			if checkCondition[value] {
-				return fiber.NewError(fiber.StatusBadRequest, fmt.Sprintf("got duplicate value on index %d with keys %s", idx, keys))
-			}
-			checkCondition[value] = true
+			identifiers = append(identifiers, fmt.Sprintf("%s: %v", keys, value))
 		}
+		identifier := strings.Join(identifiers, " | ")
+
+		if checkCondition[identifier] {
+			return fiber.NewError(fiber.StatusBadRequest, fmt.Sprintf("Duplicate key-value pairs detected on index %d: %s", idx, identifier))
+		}
+
+		checkCondition[identifier] = true
 		idx++
 	}
 
@@ -171,12 +177,18 @@ func updateRuleSet(c *fiber.Ctx) error {
 	checkCondition := make(map[interface{}]bool)
 	idx := 1
 	for _, rule := range updatedRuleSet.Rules {
+		// Create a unique identifier based on all keys and their values
+		var identifiers []string
 		for keys, value := range rule.Conditions {
-			if checkCondition[value] {
-				return fiber.NewError(fiber.StatusBadRequest, fmt.Sprintf("got duplicate value on index %d with keys %s", idx, keys))
-			}
-			checkCondition[value] = true
+			identifiers = append(identifiers, fmt.Sprintf("%s: %v", keys, value))
 		}
+		identifier := strings.Join(identifiers, " | ")
+
+		if checkCondition[identifier] {
+			return fiber.NewError(fiber.StatusBadRequest, fmt.Sprintf("Duplicate key-value pairs detected on index %d: %s", idx, identifier))
+		}
+
+		checkCondition[identifier] = true
 		idx++
 	}
 
