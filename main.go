@@ -73,7 +73,7 @@ func setApp(file *os.File) *fiber.App { // setting up middlewares
 
         // caching middleware
         app.Use(cache.New(cache.Config{
-                Expiration:   30 * time.Minute,
+                Expiration:   30 * time.Second,
                 CacheControl: true,
         }))
 
