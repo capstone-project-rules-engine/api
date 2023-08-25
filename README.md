@@ -93,7 +93,7 @@
 
 ```json
 {
-  "message": "1 rule set already exist"
+  "message": "1 new rules has been inserted to 'ruleset1'"
 }
 ```
 
