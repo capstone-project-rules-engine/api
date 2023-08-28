@@ -9,6 +9,7 @@ import (
 
 func ValidateRule(operator string, initValue, inputValue interface{}) (bool, error) {
 	expressionString := fmt.Sprintf("%v %s %v", inputValue, operator, initValue)
+	fmt.Println(expressionString)
 	expression, err := govaluate.NewEvaluableExpression(expressionString)
 	if err != nil {
 		fmt.Println(err)
@@ -47,15 +48,16 @@ func Exec(ruleSet string, rulesSelected models.RuleSet, inputUSer map[string]int
 				continue
 			}
 			// cek key di inout user ada apa kgk
-			if inputUSer[condition.Attribute] == nil {
+			if inputUSer[condition.Label] == nil { // harusnya make label, tapi malah attribute
 				boolComplete = append(boolComplete, false)
 				continue
 			}
 			// validasi rule
-			result, err := ValidateRule(condition.Operator, rule.Conditions[condition.Label], inputUSer[condition.Attribute])
+			result, err := ValidateRule(condition.Operator, rule.Conditions[condition.Label], inputUSer[condition.Label])
 			if err != nil {
 				return nil, err
 			}
+
 			boolComplete = append(boolComplete, result)
 		}
 		if CheckBoolean(boolComplete) {

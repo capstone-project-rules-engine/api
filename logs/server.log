@@ -395,3 +395,42 @@
 [2023-08-25 21:47:01] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400      0s - Duplicate key-value pairs detected on index 2: $hargalebih:10|$jumlahbaranglebih:5
 [2023-08-25 21:49:46] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 400   595µs - Duplicate key-value pairs detected on index 2: $hargalebih: 10 | $jumlahbaranglebih: 5
 [2023-08-25 21:51:22] [INFO] /insertRuletoRuleSet PATCH (127.0.0.1) 200 1.6487338s - 2 new rules has been inserted to 'ruleset2'
+[ERROR] 2023/08/27 21:47:08 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/27 21:47:19 /fetchSpecificRuleSet GET: invalid character '\x1b' looking for beginning of value
+[2023-08-27 21:47:30] [INFO] /execInput POST (127.0.0.1) 200 4.4439708s - execute 'ruleset1' rule set
+[ERROR] 2023/08/27 21:52:15 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[ERROR] 2023/08/27 21:52:21 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[2023-08-27 21:53:35] [INFO] /fetchRules GET (127.0.0.1) 200 1.9720192s - 26 rule sets printed
+[2023-08-27 21:53:49] [INFO] /fetchRules GET (127.0.0.1) 200 1.328485s - 26 rule sets printed
+[ERROR] 2023/08/27 21:54:00 /fetchRules GET: invalid character '\x1b' looking for beginning of value
+[2023-08-27 21:56:05] [INFO] /fetchRules GET (127.0.0.1) 200 2.8507489s - 26 rule sets printed
+[2023-08-28 09:25:25] [INFO] /fetchRules GET (127.0.0.1) 200 2.2658501s - 26 rule sets printed
+[2023-08-28 09:26:00] [INFO] /fetchSpecificRuleSet GET (127.0.0.1) 200 1.2564459s - printing rule set 'RuleSet 1'
+[2023-08-28 09:39:05] [INFO] /insertRuleTemplate POST (127.0.0.1) 201 1.1419832s - new rule set inserted
+[2023-08-28 09:39:47] [INFO] /insertRuleTemplate POST (127.0.0.1) 409 944.5555ms - rule set already exists
+[2023-08-28 09:49:50] [INFO] /execInput POST (127.0.0.1) 200 1.6467375s - execute 'diskondummy' rule set
+[ERROR] 2023/08/28 09:51:52 /execInput POST: error
+[2023-08-28 09:53:13] [INFO] /execInput POST (127.0.0.1) 200 1.8113425s - execute 'diskondummy' rule set
+[2023-08-28 09:53:48] [INFO] /execInput POST (127.0.0.1) 200 1.8070215s - execute 'diskondummy' rule set
+[2023-08-28 09:54:46] [INFO] /execInput POST (127.0.0.1) 200 1.7242856s - execute 'diskondummy' rule set
+[2023-08-28 09:55:39] [INFO] /execInput POST (127.0.0.1) 200 1.8080028s - execute 'diskondummy' rule set
+[2023-08-28 09:56:20] [INFO] /execInput POST (127.0.0.1) 200 1.8856425s - execute 'diskondummy' rule set
+[2023-08-28 09:56:49] [INFO] /execInput POST (127.0.0.1) 404 992.9252ms - rule set 'diruleset1' not found
+[2023-08-28 09:56:57] [INFO] /execInput POST (127.0.0.1) 200 970.3618ms - execute 'ruleset1' rule set
+[2023-08-28 09:57:31] [INFO] /execInput POST (127.0.0.1) 200 1.1225156s - execute 'diskondummy' rule set
+[2023-08-28 09:59:09] [INFO] /execInput POST (127.0.0.1) 200 1.8299063s - execute 'diskondummy' rule set
+[2023-08-28 10:00:02] [INFO] /execInput POST (127.0.0.1) 200 1.7615252s - execute 'diskondummy' rule set
+[2023-08-28 10:01:10] [INFO] /execInput POST (127.0.0.1) 200 1.8248893s - execute 'diskondummy' rule set
+[2023-08-28 10:02:59] [INFO] /execInput POST (127.0.0.1) 200 1.740966s - execute 'diskondummy' rule set
+[2023-08-28 10:07:01] [INFO] /execInput POST (127.0.0.1) 200 1.626083s - execute 'diskondummy' rule set
+[2023-08-28 10:08:32] [INFO] /execInput POST (127.0.0.1) 200 1.6755574s - execute 'diskondummy' rule set
+[2023-08-28 10:09:31] [INFO] /execInput POST (127.0.0.1) 200 1.5075433s - execute 'diskondummy' rule set
+[2023-08-28 10:10:46] [INFO] /execInput POST (127.0.0.1) 200 1.5771213s - execute 'diskondummy' rule set
+[2023-08-28 10:12:03] [INFO] /execInput POST (127.0.0.1) 200 1.5790288s - execute 'diskondummy' rule set
+[2023-08-28 10:13:09] [INFO] /execInput POST (127.0.0.1) 200 1.6657798s - execute 'diskondummy' rule set
+[2023-08-28 10:13:41] [INFO] /fetchSpecificRuleSet GET (127.0.0.1) 200 966.7734ms - printing rule set 'Diskon dummy'
+[2023-08-28 10:14:07] [INFO] /execInput POST (127.0.0.1) 200 950.8774ms - execute 'diskondummy' rule set
+[2023-08-28 10:15:09] [INFO] /execInput POST (127.0.0.1) 200 1.6870462s - execute 'diskondummy' rule set
+[2023-08-28 10:16:29] [INFO] /execInput POST (127.0.0.1) 200 1.6600475s - execute 'diskondummy' rule set
+[2023-08-28 10:16:54] [WARNING] /execInput POST (127.0.0.1) 500 1.6372058s - Cannot transition token types from UNKNOWN [<nil>] to COMPARATOR [<]
+[2023-08-28 10:17:39] [INFO] /execInput POST (127.0.0.1) 200 1.5798424s - execute 'diskondummy' rule set
